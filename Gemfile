@@ -6,4 +6,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'chromedriver-helper'
+  gem 'rspec'
 end

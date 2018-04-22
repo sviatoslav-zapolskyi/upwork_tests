@@ -10,8 +10,18 @@ Feature: Find freelancers
     And <keyword> is contained in opened freelancer
 
     Examples:
-      |keyword|
-      |ruby   |
+      | keyword |
+      | ruby    |
+      | java    |
+
+  Scenario: User can change search contexts back and forth between 'Find Freelancers' and 'Find Jobs'
+    Given main page
+    When change search context to 'Find Jobs'
+    Then selected search context is 'Find Jobs'
+    When change search context to 'Find Freelancers'
+    Then selected search context is 'Find Freelancers'
+    When change search context to 'Find Jobs'
+    Then selected search context is 'Find Jobs'
 
 #
 #  Test case

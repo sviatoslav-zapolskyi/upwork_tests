@@ -1,10 +1,6 @@
 require 'capybara/cucumber'
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
-end
-
-Capybara.javascript_driver = :chrome
+Capybara.javascript_driver = :selenium
 
 Capybara.configure do |config|
   config.run_server = false
