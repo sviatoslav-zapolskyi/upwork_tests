@@ -8,3 +8,5 @@ Capybara.configure do |config|
   config.default_driver = :selenium
   config.app_host = 'https://www.upwork.com'
 end
+
+Dir[File.join(File.dirname(__FILE__), '../pages/*.rb')].each { |f| require f }
