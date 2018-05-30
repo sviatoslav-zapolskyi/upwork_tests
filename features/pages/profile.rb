@@ -24,7 +24,7 @@ class UpWork
         when :name then 'span.ng-binding[itemprop="name"][data-ng-click]'
         when :title then 'h3.m-0-top.m-sm-bottom[data-ng-if="vm.vpd.profile.title"]'
         when :description then 'p[itemprop="description"][o-words-threshold="80"]'
-        when :skills then 'a.o-tag-skill'
+        when :skills then 'span.o-tag-skill,a.o-tag-skill'
       end
     end
   end
