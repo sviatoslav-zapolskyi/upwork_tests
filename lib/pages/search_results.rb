@@ -1,12 +1,12 @@
-class UpWork
+module UpWork
   class SearchResults
-    include Capybara::DSL
+    include UpWork::Driver
     include UpWork::Title
 
     attr_accessor :data
 
     def initialize
-      all(selector :description)
+      wait_all(selector :description)
 
       @data = all(selector :search_result_list).map do |f|
         str = f.all('*[data-ng-click^="linkClicked($event"]').first[:'data-ng-click']

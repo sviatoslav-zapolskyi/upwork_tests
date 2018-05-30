@@ -1,6 +1,6 @@
-class UpWork
+module UpWork
   class MainPage
-    include Capybara::DSL
+    include UpWork::Driver
     include UpWork::Title
 
     def initialize

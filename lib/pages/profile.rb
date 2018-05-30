@@ -1,13 +1,13 @@
-class UpWork
+module UpWork
   class Profile
-    include Capybara::DSL
+    include UpWork::Driver
     include UpWork::Title
 
     attr_accessor :data
 
     def initialize
 
-      all(selector :skills)
+      wait_all(selector :skills)
 
       @data = {
         name: find(selector :name).text,

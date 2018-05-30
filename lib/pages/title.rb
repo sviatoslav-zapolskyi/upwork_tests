@@ -1,6 +1,6 @@
-class UpWork
+module UpWork
   module Title
-    include Capybara::DSL
+    include UpWork::Driver
 
     def search(keyword)
       find(selector :search_input).send_keys(keyword).send_keys(:enter)
@@ -14,7 +14,7 @@ class UpWork
     def search_context=(context)
       unless find(selector :search_input)[:placeholder] == context
         find(selector :magnifying_glass).click
-        find(selector :search_context).find('a', text: context).click
+        find(selector :search_context).all('a').find { |e| e.text == context }.click
       end
     end
 
