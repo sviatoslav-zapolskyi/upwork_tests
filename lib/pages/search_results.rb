@@ -6,7 +6,7 @@ module UpWork
     attr_accessor :data
 
     def initialize
-      wait_all(selector :description)
+      wait_all(selector :skills)
 
       @data = all(selector :search_result_list).map do |f|
         str = f.all('*[data-ng-click^="linkClicked($event"]').first[:'data-ng-click']
@@ -37,7 +37,7 @@ module UpWork
         when :search_result_list then 'section.air-card-hover.air-card-hover-escape.air-card-hover_tile'
         when :name then 'a.freelancer-tile-name'
         when :title then 'h4.freelancer-tile-title'
-        when :description then 'p.p-0-left.m-0.freelancer-tile-description'
+        when :description then 'p.p-0-left.m-0'
         when :skills then 'a.o-tag-skill.m-sm-top.m-0-bottom'
       end
     end

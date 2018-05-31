@@ -1,9 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.9'
+
 group :test do
-  gem 'cucumber'
-  gem 'rake'
   gem 'selenium-webdriver'
-  gem 'chromedriver-helper'
-  gem 'rspec'
 end

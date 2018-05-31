@@ -7,6 +7,11 @@ module UpWork
 
     @@driver = Selenium::WebDriver.for :firefox
 
+    def self.driver
+      @@driver
+    end
+
+
     attr_accessor :element
 
     def visit(uri)
