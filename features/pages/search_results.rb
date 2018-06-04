@@ -9,7 +9,7 @@ class UpWork
       all(selector :description)
 
       @data = all(selector :search_result_list).map do |f|
-        str = f.all('*[data-ng-click^="linkClicked($event, \'skill\'"]').first[:'data-ng-click']
+        str = f.all('*[data-ng-click^="linkClicked($event"]').first[:'data-ng-click']
         json = JSON.parse(str.slice(str.index('{')..str.rindex('}')), symbolize_names: true)
 
         { name: json[:shortName],
