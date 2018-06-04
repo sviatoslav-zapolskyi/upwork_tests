@@ -9,18 +9,20 @@ class UpWork
       all(selector :description)
 
       @data = all(selector :search_result_list).map do |f|
-        next if JSON.parse(f[:'data-log-data'])['contractor_type'] != 'freelancer'
+        str = f.all('*[data-ng-click^="linkClicked($event, \'skill\'"]').first[:'data-ng-click']
+        json = JSON.parse(str.slice(str.index('{')..str.rindex('}')), symbolize_names: true)
 
-        { name: f.find(selector :name).text,
-          title: f.find(selector :title).text,
-          description: f.find(selector :description).text,
-          skills: f.all(selector :skills).map(&:text)
+        { name: json[:shortName],
+          title: json[:title],
+          description: json[:description],
+          skills: json[:skills].map { |s| s[:skill][:name] },
+          url: json[:url]
         }
-      end.compact
+      end
     end
 
     def openProfile(name)
-      all(selector :name).find { |n| n.text == name }.click
+      visit(data.find { |p| p[:name] == name }[:url])
       Profile.new
     end
 
