@@ -24,7 +24,7 @@ class UpWork
       case selector_name
         when :search_input then 'input[id="q"]'
         when :search_result_list then 'section.air-card-hover.air-card-hover-escape.air-card-hover_tile'
-        when :search_context then 'div.dropdown[eo-dropdown]'
+        when :search_context then 'div.form-group.dropdown[eo-dropdown]'
         when :magnifying_glass then 'span.glyphicon.air-icon-search'
       end
     end
