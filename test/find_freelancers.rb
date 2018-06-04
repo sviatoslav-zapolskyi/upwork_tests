@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require_relative '../lib/helper'
 
 module Upwork
   module Matchers
@@ -21,7 +22,6 @@ module Upwork
   end
 
   class FindFreelancersTest < Minitest::Unit::TestCase
-
     include Upwork::Matchers
 
     KEYWORD = 'ruby'

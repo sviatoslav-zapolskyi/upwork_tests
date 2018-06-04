@@ -6,4 +6,4 @@
 
 `bundle install`
 
-`bundle exec rake features`
+`bundle exec ruby test/find_freelancers.rb`

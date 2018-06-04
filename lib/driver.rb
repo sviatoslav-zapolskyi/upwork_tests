@@ -5,12 +5,10 @@ module UpWork
 
     TIMEOUT = 30_000
 
-    @@driver = Selenium::WebDriver.for :firefox
-
     def self.driver
+      @@driver ||= Selenium::WebDriver.for :firefox
       @@driver
     end
-
 
     attr_accessor :element
 
@@ -56,7 +54,7 @@ module UpWork
     end
 
     def driver
-      @@driver
+      UpWork::Driver.driver
     end
 
     def base_url
