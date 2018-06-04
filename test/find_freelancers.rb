@@ -1,4 +1,3 @@
-require_relative '../features/support/env'
 require 'minitest/autorun'
 
 module Upwork
